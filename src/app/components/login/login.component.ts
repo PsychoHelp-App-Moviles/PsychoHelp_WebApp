@@ -2,7 +2,7 @@
 import { Component } from "@angular/core";
 import { Login } from '../../interfaces/login';
 import { LoginService } from 'src/app/services/login.service';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-login",
@@ -27,7 +27,7 @@ export class LoginComponent {
     .subscribe({
     next: (res) =>{
       console.log(res);
-      // this.router.navigate(['/'])
+      //this.router.navigate(['/psychologists-list'])
     },
     error:(err) =>{
       alert('There was an error in retrieving data from the server')

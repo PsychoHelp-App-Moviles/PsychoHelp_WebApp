@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { MainComponent } from './components/main/main.component'
+import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
   path:"main",
   component: MainComponent
+  },
+  {
+    path:"psychologists-list",
+    component: PsychologistsListComponent
   }
   // {
   //   path:'/home',
