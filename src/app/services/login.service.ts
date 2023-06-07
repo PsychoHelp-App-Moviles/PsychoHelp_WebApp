@@ -13,10 +13,16 @@ export class LoginService {
     BASE_URL = environment.server
     constructor(private http: HttpClient) {}
 
-    //GET
-    getemailPatient(login:Login):Observable<Login>{
+    //GET patient by email
+    getPatientbyEmail(login:Login):Observable<Login>{
       return this.http.get<Login>(`${this.BASE_URL}/patients/email/${login.email}`)
     }
+
+    //GET psychologist by email
+    getPsychologistbyEmail(login:Login):Observable<Login>{
+      return this.http.get<Login>(`${this.BASE_URL}/psychologists/email/${login.email}`)
+    }
+
     //GETS
     // getPatients():Observable<Login[]>{
     //   return this.http.get<Login[]>(`${this.BASE_URL}/patients`)
