@@ -14,8 +14,11 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import {LoginComponent} from './components/login/login.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MatIconModule } from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { LogbookComponent } from './components/logbook/logbook.component';
+
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     AppComponent,
     LoginComponent,
     MainComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    LogbookComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     // MatInputModule,
     BrowserAnimationsModule,
     // MatIconModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
