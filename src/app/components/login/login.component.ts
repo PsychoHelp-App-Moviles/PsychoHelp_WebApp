@@ -1,6 +1,7 @@
 
 import { Component } from "@angular/core";
 import { Login } from '../../interfaces/login';
+import { Patient } from '../../interfaces/Patient';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router'; 
 
@@ -16,6 +17,19 @@ export class LoginComponent {
     password:''
   };
 
+  // data : Patient = {
+  //   id:'',
+  //   firstname:'',
+  //   lastname:'',
+  //   email:'',
+  //   password:'',
+  //   phone:'',
+  //   date:'',
+  //   gender:'',
+  //   img:''
+  // }
+  data : Patient[] = []
+
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -27,7 +41,19 @@ export class LoginComponent {
     .subscribe({
     next: (res) =>{
       console.log(res);
-      // this.router.navigate(['/'])
+      const entries = Object.entries(res)
+      entries.forEach(([key, value]) => {
+        if(key == 'id'){
+          localStorage.setItem('id',value)
+          console.log(value)
+        }
+      });
+      if(res.email == this.mylogin.email && res.password == this.mylogin.password){
+        console.log("correct credentials")
+        this.router.navigate(['/main'])
+      }else{
+        alert("incorrect credentials")
+      }
     },
     error:(err) =>{
       alert('There was an error in retrieving data from the server')
