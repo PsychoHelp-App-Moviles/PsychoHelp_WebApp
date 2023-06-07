@@ -24,6 +24,7 @@ export class EditProfileComponent implements OnInit{
   }
 
   actualizarDatos() {
+    console.log()
     this.http.put('https://psychohelp-open.mybluemix.net/api/v1/psychologists/1', this.userData)
     .subscribe(
       response => {
