@@ -13,4 +13,9 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getProfileRoute(): string {
+    const userType = localStorage.getItem('type');
+    return userType === 'Psychologist' ? '/psychologist_profile' : '/patient_profile';
+  }
+
 }

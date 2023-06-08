@@ -1,0 +1,84 @@
+<div class="edit-profile">
+    <form class="custom-form" (ngSubmit)="actualizarDatosPaciente()">
+      <h1>Editar Perfil</h1>
+  
+      <div class="profile-picture">
+        <img [src]="userData.img" alt="Foto de perfil" [ngStyle]="{'border-radius': '50%', 'width': '150px', 'height': '150px', 'object-fit': 'cover'}">
+      </div>
+  
+      <div>
+        <label for="image">Foto de Perfil:</label>
+        <input
+        type="text"
+        [(ngModel)]="userData.img"
+        name="image"
+        placeholder="Imagen"
+        required="required"
+        />
+      </div>
+  
+      <div>
+        <label for="name">Nombres:</label>
+        <input
+        [(ngModel)]="userData.firstName"
+        name="firstName"
+        placeholder="Nombres"
+        required="required"
+        />
+      </div>
+
+      <div>
+        <label for="name">Apellidos:</label>
+        <input
+        [(ngModel)]="userData.lastName"
+        name="lastName"
+        placeholder="Apellidos"
+        required="required"
+        />
+      </div>
+  
+      <div>
+        <label for="email">Email:</label>
+        <input
+        [(ngModel)]="userData.email"
+        name="email"
+        placeholder="Email"
+        required="required"
+        />
+      </div>
+  
+      <div>
+        <label for="password">Password:</label>
+        <input
+        [(ngModel)]="userData.password"
+        name="password"
+        placeholder="Password"
+        required="required"
+        />
+      </div>
+  
+      <div>
+        <label for="phone">Número de teléfono:</label>
+        <input
+        [(ngModel)]="userData.phone"
+        name="phone"
+        placeholder="Número de teléfono"
+        required="required"
+        />
+      </div>
+  
+      <div>
+        <label for="date">Fecha de nacimiento:</label>
+        <input
+        [(ngModel)]="userData.date"
+        name="date"
+        placeholder="Fecha de nacimiento"
+        required="required"
+        />
+      </div>
+  
+      <button type="submit">Actualizar Datos</button>
+    </form>
+  </div>
+
+  
