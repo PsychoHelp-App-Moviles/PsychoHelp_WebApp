@@ -24,6 +24,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
 import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
+import { EditAppointmentComponent } from './components/edit-appointment/edit-appointment.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ListAppointmentComponent } from './components/list-appointment/list-app
     EditProfilePatientComponent,
     ConfirmUpdateComponent,
     ListAppointmentComponent,
+    EditAppointmentComponent,
   ],
   imports: [
     BrowserModule,
