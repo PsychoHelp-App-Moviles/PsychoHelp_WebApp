@@ -1,0 +1,49 @@
+.citas-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cita-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.cita-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cita-icons {
+  display: flex;
+  margin-left: auto;
+}
+
+.cita-icons a {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cita-fecha {
+  font-weight: bold;
+}
+
+.cita-hora {
+  color: #888;
+}
+
+.cita-paciente {
+  font-style: italic;
+}

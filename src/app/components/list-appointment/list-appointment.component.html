@@ -1,1 +1,24 @@
-<p>list-appointment works!</p>
+<div class="citas-container">
+  <h2>Lista de Citas</h2>
+
+  <ul>
+    <li *ngFor="let appointment of appointmentData" class="cita-item">
+      <div class="cita-info">
+        <label>Fecha: </label>
+        <span class="cita-fecha">{{ appointment.scheduleDate }}</span>
+        <span class="cita-hora">{{ appointment.hora }}</span>
+      </div>
+      <div class="cita-icons">
+        <a href="#">
+          <span class="material-symbols-outlined">groups</span>
+        </a>
+        <a href="#">
+          <span class="material-symbols-outlined">schedule</span>
+        </a>
+        <a href="#" (click)="eliminarCita(appointment.id, $event)">
+          <span class="material-symbols-outlined">delete</span>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
