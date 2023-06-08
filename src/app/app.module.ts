@@ -23,6 +23,7 @@ import { EditProfilePatientComponent } from './components/edit-profile-patient/e
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
+import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ConfirmUpdateComponent } from './components/confirm-update/confirm-upda
     LogbookComponent,
     EditProfilePatientComponent,
     ConfirmUpdateComponent,
+    ListAppointmentComponent,
   ],
   imports: [
     BrowserModule,
