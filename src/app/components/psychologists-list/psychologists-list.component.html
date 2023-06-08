@@ -1,19 +1,70 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<div class="content">
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+      <h1 style="text-align: center;" class = "title-general"><b>Filtros</b></h1>
+      <div class = "filters">
+        <h2 class = "title-filter">Género</h2>
+        <form>
+          <div class="custom-filter filter-wrapper" *ngFor = 'let genero of generos'>
+            <label class="fake-checkbox">
+              <input type="radio" name="genero">
+              <span class="circle"><span class="fill"></span></span>
+              <span class="label">{{genero.name}}</span>
+              <span></span>
+            </label>
+          </div>
+        </form>
+        <h2 style="text-align: center;">___________________________</h2>
+        <h2 class = "title-filter">Tipo de sesión</h2>
+        <form>
+          <div class="custom-filter filter-wrapper" *ngFor = 'let sesion of tiposSesiones'>
+            <label class="fake-checkbox">
+              <input type="radio" name="price">
+              <span class="circle"><span class="fill"></span></span>
+              <span class="label">{{sesion.name}}</span>
+              <span></span>
+            </label>
+          </div>
+        </form>
+        <h2 style="text-align: center;">___________________________</h2>
+        <h2  class = "title-filter">Duración</h2>
+        <form>
+          <div class="custom-filter filter-wrapper" *ngFor = 'let tiempo of duracion'>
+            <label class="fake-checkbox">
+              <input type="radio" name="price">
+              <span class="circle"><span class="fill"></span></span>
+              <span class="label">{{tiempo.name}}</span>
+              <span></span>
+            </label>
+          </div>
+        </form>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content class="items-card-content"t>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div
+          [fxFlex]="(100/gridColumns) + '%'"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          *ngFor="let element of newData"
+        >
+          <mat-card class="mat-elevation-z4">
+            <img mat-card-image
+              src={{element.image}}
+            />
+            <mat-card-header class = "title-card">
+              <mat-card-title> {{element.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-actions class = "btn-ver">
+              <button mat-button class = "ver">Ver perfil de psicólogo</button>
+            </mat-card-actions>
+            <mat-card-actions class = "btn-agendar">
+              <button mat-raised-button class="agendar">Agendar cita</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+

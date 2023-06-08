@@ -23,8 +23,11 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
 import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
-
-
+import {MatIconModule} from "@angular/material/icon";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {CommonModule, NgForOf} from "@angular/common";
+import {MatSidenavModule} from "@angular/material/sidenav";
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,12 @@ import {PsychologistsListComponent} from "./components/psychologists-list/psycho
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
-
+    MatToolbarModule,
+    MatIconModule,
+    CommonModule,
+    FlexLayoutModule,
+    NgForOf,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
