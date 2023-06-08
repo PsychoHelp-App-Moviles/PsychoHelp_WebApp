@@ -18,7 +18,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { LogbookComponent } from './components/logbook/logbook.component';
-
+import { EditProfilePatientComponent } from './components/edit-profile-patient/edit-profile-patient.component';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { LogbookComponent } from './components/logbook/logbook.component';
     LoginComponent,
     MainComponent,
     EditProfileComponent,
-    LogbookComponent
+    LogbookComponent,
+    EditProfilePatientComponent,
+    ConfirmUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,10 @@ import { LogbookComponent } from './components/logbook/logbook.component';
     // MatInputModule,
     BrowserAnimationsModule,
     // MatIconModule
-    MatCardModule
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
