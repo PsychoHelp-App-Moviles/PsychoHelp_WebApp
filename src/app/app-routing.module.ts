@@ -4,6 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { AppComponent } from './app.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { MainComponent } from './components/main/main.component'
+import { LogbookComponent } from './components/logbook/logbook.component';
+import { EditProfilePatientComponent } from './components/edit-profile-patient/edit-profile-patient.component';
 import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
 
 
@@ -13,17 +15,25 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:"profile",
+    path:"psychologist_profile",
     component: EditProfileComponent
   },
   {
-  path:"main",
-  component: MainComponent
+    path:"patient_profile",
+    component: EditProfilePatientComponent
   },
   {
-    path:"psychologists-list",
+    path:"main",
+    component: MainComponent
+  },
+  {
+    path:"logbook",
+    component: LogbookComponent
+  },
+  {
+    path:'psychologists-list',
     component: PsychologistsListComponent
-  }
+  },
   // {
   //   path:'/home',
   //   component: AppComponent
