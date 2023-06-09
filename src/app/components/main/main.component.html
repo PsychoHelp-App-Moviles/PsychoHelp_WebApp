@@ -2,15 +2,26 @@
 
 
 <div class="navbar">
+<div class="navbar-logo">
+  <img class="navbar-logo " src="https://images.hola.com/imagenes/estar-bien/20191122153958/razones-terapia-aceptado/0-745-569/terapia-psicologia-bien-visto-t.jpg?tx=w_680">
+
+</div>
+<div class="navbar-links">
   <mat-icon  fontIcon="home"></mat-icon>
    <a class="nav-link">Inicio</a>
-  <mat-icon fontIcon="calendar_today"></mat-icon>
-    <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario</a>
+   
+   <mat-icon fontIcon="person_pin"></mat-icon>
+   <a class="nav-link" [routerLink] ="getProfileRoute()" routerLinkActive="active">Ir a Perfil</a>
   <mat-icon fontIcon=" local_hospital"></mat-icon>
     <a class="nav-link" routerLink ="/logbook">pacientes</a>
-  <mat-icon fontIcon="person_pin"></mat-icon>
-    <a class="nav-link" [routerLink] ="getProfileRoute()" routerLinkActive="active">Ir a Perfil</a>
 
+  <mat-icon fontIcon="calendar_today"></mat-icon>
+    <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario</a>
+    <mat-icon  fontIcon=" public"></mat-icon>
+    <a class="nav-link">Mis publicaciones</a>
+    <mat-icon  fontIcon="exit_to_app"></mat-icon>
+    <a class="nav-link">Cerrar sesion</a>
+  </div>
 </div>
 
 
@@ -18,7 +29,7 @@
 
 
 
-
+<div class="homebox-side">
 <div class="homebox">
   
 
@@ -45,6 +56,8 @@
     </div>
     
 </div>
+</div>
+
 
 <div class="citasData" >
   <div class="citasHeader">
