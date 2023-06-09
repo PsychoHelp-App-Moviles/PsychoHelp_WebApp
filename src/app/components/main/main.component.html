@@ -4,7 +4,7 @@
 <div class="navbar">
   <mat-icon  fontIcon="home"></mat-icon>
    <a class="nav-link">Inicio</a>
-  <mat-icon fontIcon="home"></mat-icon>
+  <mat-icon fontIcon="calendar_today"></mat-icon>
     <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario</a>
   <mat-icon fontIcon=" local_hospital"></mat-icon>
     <a class="nav-link" routerLink ="/logbook">pacientes</a>
@@ -38,7 +38,7 @@
         </mat-card-content>
 
         <mat-card-actions>
-          <button mat-button [routerLink]="['/knowMore',element.id]">Mas información</button>
+          <button mat-stroked-button [routerLink]="['/knowMore',element.id]">Mas información</button>
         </mat-card-actions>
     </mat-card>
  
@@ -46,10 +46,26 @@
     
 </div>
 
-<div class="homebox" >
-    <div *ngFor="let element of publicationData">
-      <mat-card class="main-card">
-        <p>---</p>
+<div class="citasData" >
+  <div class="citasHeader">
+    <h1>CITAS AGENDADAS</h1>
+  </div>
+
+
+
+    <div *ngFor="let appointment of appointmentsData">
+      <mat-card class="citas-card">
+        <mat-card-title>Tienes una cita agendada</mat-card-title>
+        <div class = "citas-card-content">
+          <mat-card-content class=""> 
+            <p>Fecha: {{appointment.scheduleDate}}</p>
+            <p>Historia personal: {{appointment.personalHistory}}</p>
+            </mat-card-content>
+
+          <mat-card-actions >
+            <button  mat-stroked-button [routerLink]="['/knowMore',appointment.id]">Mas información</button>
+          </mat-card-actions>
+        </div>
       </mat-card>
 
     </div>

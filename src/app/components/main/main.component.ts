@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicationService } from 'src/app/services/publication.service';
-
+import { AppointmentService } from 'src/app/services/appointment.service';
 
 @Component({
   selector: 'app-main',
@@ -14,11 +14,15 @@ export class MainComponent implements OnInit {
 
 
   publicationData:any;
+  appointmentsData:any;
+
   guardado:any; 
-  constructor(private PublicationService:PublicationService) { }
+  constructor(private PublicationService:PublicationService, 
+    private AppointmentService:AppointmentService) { }
   ngOnInit(): void {
 
     this.getPublications();
+    this.getAppointments();
 
   }
 
@@ -40,5 +44,15 @@ export class MainComponent implements OnInit {
       
       
 }
+
+getAppointments(){
+
+      this.AppointmentService.getAll().subscribe(dataApp => {
+        this.appointmentsData = dataApp;
+        console.log(this.appointmentsData.content)
+      });   
+
+}
+
 
 }
