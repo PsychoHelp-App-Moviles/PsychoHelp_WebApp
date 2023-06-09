@@ -1,25 +1,73 @@
-<nav class="navbar navbar-expand-lg navbar-dark orange">
-  <div class="container">
-    <!-- <img src="assets/img/logomultitest.png" width="50" height="50"> -->
-    <a class="navbar-brand mr-auto" href="#">Test</a>
 
-    <div class="navbar-brand">
-      <a title="tagA" href="home">
-        <i class="bi bi-bootstrap-fill"></i>
-      </a>
-    </div>
-    <button title="button1" type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse nav justify-content-end" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario</a>
-        </li>
-      </ul>
-      <button class="btn btn-primary ml-2" [routerLink]="getProfileRoute()">Ir a Perfil</button>
+
+<div class="navbar">
+  <mat-icon  fontIcon="home"></mat-icon>
+   <a class="nav-link">Inicio</a>
+  <mat-icon fontIcon="calendar_today"></mat-icon>
+    <a class="nav-link" routerLink="/calendario" routerLinkActive="active">Calendario</a>
+  <mat-icon fontIcon=" local_hospital"></mat-icon>
+    <a class="nav-link" routerLink ="/logbook">pacientes</a>
+  <mat-icon fontIcon="person_pin"></mat-icon>
+    <a class="nav-link" [routerLink] ="getProfileRoute()" routerLinkActive="active">Ir a Perfil</a>
+
+</div>
+
+
+
+
+
+
+
+<div class="homebox">
+  
+
+  <div *ngFor="let element of publicationData" >
+  
+    <mat-card class="main-card" >
+        <mat-card-header>
+        
+          <mat-card-title>{{element.title}}</mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <div class="image-card-container">
+        <img mat-card-image src="{{element.photoUrl}}" class="image-card" alt="Foto relacionada a la publicación">
+        </div>
+        <mat-card-content>
+          <p>{{element.description}}</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-stroked-button [routerLink]="['/knowMore',element.id]">Mas información</button>
+        </mat-card-actions>
+    </mat-card>
+ 
     </div>
+    
+</div>
+
+<div class="citasData" >
+  <div class="citasHeader">
+    <h1>CITAS AGENDADAS</h1>
   </div>
-</nav>
 
+
+
+    <div *ngFor="let appointment of appointmentsData">
+      <mat-card class="citas-card">
+        <mat-card-title>Tienes una cita agendada</mat-card-title>
+        <div class = "citas-card-content">
+          <mat-card-content class=""> 
+            <p>Fecha: {{appointment.scheduleDate}}</p>
+            <p>Historia personal: {{appointment.personalHistory}}</p>
+            </mat-card-content>
+
+          <mat-card-actions >
+            <button  mat-stroked-button [routerLink]="['/knowMore',appointment.id]">Mas información</button>
+          </mat-card-actions>
+        </div>
+      </mat-card>
+
+    </div>
+  
+</div>

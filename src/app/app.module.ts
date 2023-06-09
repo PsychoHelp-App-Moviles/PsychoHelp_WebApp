@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {HttpClientModule} from '@angular/common/http'
 
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,7 +46,7 @@ import { ConfirmUpdateComponent } from './components/confirm-update/confirm-upda
     // MatFormFieldModule,
     // MatInputModule,
     BrowserAnimationsModule,
-    // MatIconModule
+    MatIconModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
