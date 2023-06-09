@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     // server: 'https://page.herokuapp.com'
-    server:'https://psychohelp-open.mybluemix.net/api/v1',
+    server:'http://localhost:5000',
     PORT: '5000'
   };
   
