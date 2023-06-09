@@ -3,36 +3,29 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { MatFormFieldModule } from '@angular/material/form-field'; // Importa el módulo de Angular Material que necesitas
-// import { MatInputModule } from '@angular/material/input'; // Importa el módulo de Angular Material que necesitas
+import { MatFormFieldModule } from '@angular/material/form-field'; // Importa el módulo de Angular Material que necesitas
+import { MatInputModule } from '@angular/material/input'; // Importa el módulo de Angular Material que necesitas
 
 import {HttpClientModule} from '@angular/common/http'
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './components/main/main.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component'
 import {LoginComponent} from './components/login/login.component';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatIconModule } from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import { LogbookComponent } from './components/logbook/logbook.component';
-import { EditProfilePatientComponent } from './components/edit-profile-patient/edit-profile-patient.component';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
-import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MainComponent,
-    EditProfileComponent,
-    LogbookComponent,
-    EditProfilePatientComponent,
-    ConfirmUpdateComponent,
+    NavbarComponent,
+    SidebarComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -42,14 +35,11 @@ import { ConfirmUpdateComponent } from './components/confirm-update/confirm-upda
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
-    // MatIconModule
-    MatButtonModule,
-    MatCardModule,
-    MatDialogModule,
-  
+    MatIconModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

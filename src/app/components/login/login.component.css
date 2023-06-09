@@ -49,21 +49,3 @@
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
     cursor: pointer;
   }
-
-  .login-picture {
-    /* background-color: blue; */
-    width: 100%;
-    height: 250px;
-    /* border-radius: 50%; */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 2rem;
-  }
-  
-  .login-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
