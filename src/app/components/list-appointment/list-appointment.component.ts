@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { EditAppointmentComponent } from '../edit-appointment/edit-appointment.component';
+
 
 @Component({
   selector: 'app-list-appointment',
@@ -22,6 +24,44 @@ export class ListAppointmentComponent {
     this.http.get(apiUrl + id).subscribe((data: any) => {
       this.appointmentData = data;
     });
+  }
+
+  openDialog(id: number, event: Event) {
+    event.preventDefault();
+    const dialogRef = this.dialog.open(EditAppointmentComponent, {
+      width: '350px',
+    });
+
+    dialogRef.afterClosed().subscribe((selectedDate: string) => {
+      if (selectedDate) {
+        this.reagendarCita(id, selectedDate);
+      }
+    });
+  }
+
+  reagendarCita(id: number, nuevaFecha: string) {
+
+    const apiUrl = `https://psychohelp-open.mybluemix.net/api/v1/appointment/`;
+    const appointmentData = {
+      meetUrl: "string",
+      scheduleDate: nuevaFecha,
+      personalHistory: "string",
+      motive: "string",
+      testRealized: "string",
+      treatment: "string"
+    };
+    
+    this.http.put(apiUrl + id, appointmentData).subscribe(
+      (response) => {
+        alert('La cita se reagendó exitosamente');
+        console.log('La cita se reagendó exitosamente:', response);
+        location.reload();
+      },
+      (error) => {
+        alert('Ocurrió un error al reagendar la cita');
+        console.error('Error al reagendar la cita:', error);
+      }
+    );
   }
   
   eliminarCita(id: number, event: Event) {

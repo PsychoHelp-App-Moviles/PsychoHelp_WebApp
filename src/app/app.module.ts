@@ -3,8 +3,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { MatFormFieldModule } from '@angular/material/form-field'; // Importa el módulo de Angular Material que necesitas
-// import { MatInputModule } from '@angular/material/input'; // Importa el módulo de Angular Material que necesitas
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field'; // Importa el módulo de Angular Material que necesitas
+import { MatInputModule } from '@angular/material/input'; // Importa el módulo de Angular Material que necesitas
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 import {HttpClientModule} from '@angular/common/http'
 
@@ -47,16 +49,20 @@ import { EditAppointmentComponent } from './components/edit-appointment/edit-app
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
