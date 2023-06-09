@@ -1,6 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #ecf0f3;
+}
+
 .citas-container {
-  width: 400px;
-  margin: 0 auto;
+  max-width: 60%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem 3rem;
+  margin: auto;
+  border-radius: 2.5rem;
+  background-color: #89C5CC;
+  color: black;
+  margin-top: 10rem;
 }
 
 h2 {
