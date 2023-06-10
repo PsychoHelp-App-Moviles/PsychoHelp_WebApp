@@ -95,4 +95,23 @@ export class LoginComponent {
     // console.log(this.mylogin.email);
     // console.log(this.mylogin.password);
   }
+  register() {
+    this.modal.dismissAll()
+    this.loginService.createUser(this.myregister)
+    .subscribe({
+      next: (res) =>{
+        console.log(res);
+        this.modal.dismissAll()
+        this.router.navigate(['/main'])
+      },
+      error:(err) =>{
+        // alert('There was an error in retrieving data from the server')
+        console.log(err)
+      }
+    })
+  }
+
+  openModalRegister(){
+    this.modal.open(this.modalRegister,{centered: true , size: 'lg'})
+  }
 }
