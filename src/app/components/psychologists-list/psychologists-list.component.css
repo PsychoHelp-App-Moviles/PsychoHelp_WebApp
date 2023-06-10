@@ -90,3 +90,31 @@
 .fake-checkbox{
   margin-left: 10%;
 }
+.dialog{
+  background-color: #89C5CC;
+  text-align: center;
+  justify-content: center;
+}
+.dialog img{
+  width: 200px;
+  height: 200px;
+  margin-top: 10%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.example-form-field {
+  margin-right: 20px;
+}
+
+.agendar-dos{
+
+  background-color: #E7F6F8;
+  font-size: large;
+  padding: 20px;
+}
+.agendar-dos:hover{
+
+  background-color: #33105d;
+  font-size: large;
+  color: white;
+}

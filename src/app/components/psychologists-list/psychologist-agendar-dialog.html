@@ -1,0 +1,24 @@
+<div class="dialog">
+  <h2 mat-dialog-title >Elija una fecha</h2>
+  <mat-form-field class="example-form-field">
+    <mat-label>Escoge una fecha</mat-label>
+    <input matInput [matDatepicker]="datepicker" (dateChange)="saveDate($event.value)">
+    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Listo</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+  <br/>
+  <mat-form-field appearance="fill">
+    <mat-label>Escoge un horario</mat-label>
+    <input matInput [ngxMatTimepicker]="picker"/>
+    <ngx-mat-timepicker #picker (timeSet)="timeChange($event)"></ngx-mat-timepicker>
+  </mat-form-field>
+  <br/>
+<button class="agendar-dos" mat-button (click)="postAppointment(data.element.id)">Agendar</button>
+<hr/>
+</div>
+

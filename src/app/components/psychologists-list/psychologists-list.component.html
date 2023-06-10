@@ -14,7 +14,7 @@
             </label>
           </div>
         </form>
-        <h2 style="text-align: center;">___________________________</h2>
+        <hr/>
         <h2 class = "title-filter">Tipo de sesión</h2>
         <form>
           <div class="custom-filter filter-wrapper" *ngFor = 'let sesion of tiposSesiones'>
@@ -26,7 +26,7 @@
             </label>
           </div>
         </form>
-        <h2 style="text-align: center;">___________________________</h2>
+        <hr/>
         <h2  class = "title-filter">Duración</h2>
         <form>
           <div class="custom-filter filter-wrapper" *ngFor = 'let tiempo of duracion'>
@@ -40,7 +40,7 @@
         </form>
       </div>
     </mat-drawer>
-    <mat-drawer-content class="items-card-content"t>
+    <mat-drawer-content class="items-card-content">
       <div fxLayout="row wrap" fxLayoutGap="16px grid">
         <div
           [fxFlex]="(100/gridColumns) + '%'"
@@ -56,10 +56,10 @@
               <mat-card-title> {{element.name}}</mat-card-title>
             </mat-card-header>
             <mat-card-actions class = "btn-ver">
-              <button mat-button class = "ver">Ver perfil de psicólogo</button>
+              <button mat-button class = "ver" (click)="openDialog(element)">Ver perfil de psicólogo</button>
             </mat-card-actions>
             <mat-card-actions class = "btn-agendar">
-              <button mat-raised-button class="agendar">Agendar cita</button>
+              <button mat-raised-button class="agendar" (click)="openDialogAgendar(element)">Agendar cita</button>
             </mat-card-actions>
           </mat-card>
         </div>

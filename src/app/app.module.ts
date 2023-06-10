@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbTimepickerModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,12 +22,22 @@ import { EditProfilePatientComponent } from './components/edit-profile-patient/e
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import { ConfirmUpdateComponent } from './components/confirm-update/confirm-update.component';
-import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
+import {
+  PsychologistAgendarDialog,
+  PsychologistDetailDialog, PsychologistSavedAppointmentDialog,
+  PsychologistsListComponent
+} from "./components/psychologists-list/psychologists-list.component";
 import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {CommonModule, NgForOf} from "@angular/common";
+import {CommonModule, JsonPipe, NgForOf} from "@angular/common";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +47,10 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     LogbookComponent,
     EditProfilePatientComponent,
     ConfirmUpdateComponent,
-    PsychologistsListComponent
+    PsychologistsListComponent,
+    PsychologistDetailDialog,
+    PsychologistAgendarDialog,
+    PsychologistSavedAppointmentDialog
   ],
   imports: [
     BrowserModule,
@@ -60,6 +73,13 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     FlexLayoutModule,
     NgForOf,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgxMatTimepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
