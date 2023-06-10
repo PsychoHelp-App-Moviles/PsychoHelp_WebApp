@@ -1,14 +1,24 @@
 
 import { EnvironmentInjector, Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpErrorResponse,HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Login } from '../interfaces/login';
+import { Register } from '../interfaces/register';
 import { environment } from 'src/environments/environment';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+    Authorization: 'my-auth-token',
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class LoginService {
     BASE_URL = environment.server
     constructor(private http: HttpClient) {}
@@ -21,6 +31,11 @@ export class LoginService {
     //GET psychologist by email
     getPsychologistbyEmail(login:Login):Observable<Login>{
       return this.http.get<Login>(`${this.BASE_URL}/psychologists/email/${login.email}`)
+    }
+
+    //POST
+    createUser(register:Register):Observable<Register>{
+      return this.http.post<Register>(`${this.BASE_URL}/patients`,register,httpOptions)
     }
 
     //GETS

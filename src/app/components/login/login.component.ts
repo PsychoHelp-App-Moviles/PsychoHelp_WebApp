@@ -1,24 +1,42 @@
 
-import { Component } from "@angular/core";
+import { Component, ViewChild, TemplateRef, } from "@angular/core";
 import { Login } from '../../interfaces/login';
+import { Register } from '../../interfaces/register';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router'; 
+import { NgbModal,NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
+
 export class LoginComponent {
+
+  @ViewChild('modalRegister', { static: true }) modalRegister?: TemplateRef<any>;
 
   mylogin : Login = {
     email: '',
     password:''
   };
+  
+  myregister : Register = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    phone: '',
+    date: '10/06/2023',
+    gender: '',
+    img: 'image'
+  };
 
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private modal: NgbModal,
   ) {}
 
   submitLogin(){
@@ -79,4 +97,25 @@ export class LoginComponent {
     // console.log(this.mylogin.email);
     // console.log(this.mylogin.password);
   }
+
+  register() {
+    this.modal.dismissAll()
+    this.loginService.createUser(this.myregister)
+    .subscribe({
+      next: (res) =>{
+        console.log(res);
+        this.modal.dismissAll()
+        this.router.navigate(['/main'])
+      },
+      error:(err) =>{
+        // alert('There was an error in retrieving data from the server')
+        console.log(err)
+      }
+    })
+  }
+
+  openModalRegister(){
+    this.modal.open(this.modalRegister,{centered: true , size: 'lg'})
+  }
+
 }

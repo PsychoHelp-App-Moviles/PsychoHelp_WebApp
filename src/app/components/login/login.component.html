@@ -1,8 +1,8 @@
 
 <div class="login">
     <form (submit)="submitLogin()"class="custom-form" method="post">
-      <h1>Login</h1>
-      
+      <h1>PsychoHelp</h1>
+      <p>Ingrese su email y contraseña</p>
     <div class="login-picture">
       <img src="assets/img/Psychologist-bro.png" alt="image">
     </div>
@@ -15,14 +15,92 @@
         required="required"
       />
       </div>
-      <input
+      <div>
+        <input
         type="password"
         [(ngModel)]="mylogin.password"
         name="password"
         placeholder="Password"
         required="required"
       />
+      </div>
       <button type="submit" (click)="login()">Log in</button>
+      <button class="mt-2" type="submit" (click)="openModalRegister()">Register</button>
     </form>
   </div>
-  
+
+  <ng-template #modalRegister let-close="close">
+    <div class="row-cols-sm-auto offset-md-auto p-3">
+      <div class="modal-header">
+        <h5 class="modal-title">Register</h5>
+        <button type="button" class="ml close" (click)="close()" title="button1">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <form class="custom-form-register" (submit)="register()">
+
+        <div>
+          <input
+          type="first name"
+          [(ngModel)]="myregister.firstName"
+          name="first name"
+          placeholder="first name"
+          required="required"
+        />
+        </div>
+        <div>
+          <input
+          type="last name"
+          [(ngModel)]="myregister.lastName"
+          name="last name"
+          placeholder="last name"
+          required="required"
+        />
+        </div>
+        <div>
+          <input
+          type="email"
+          [(ngModel)]="myregister.email"
+          name="email"
+          placeholder="Email"
+          required="required"
+        />
+        </div>
+        <div>
+          <input
+          type="password"
+          [(ngModel)]="myregister.password"
+          name="password"
+          placeholder="Password"
+          required="required"
+        />
+        </div>
+        <div>
+          <input
+          type="phone"
+          [(ngModel)]="myregister.phone"
+          name="phone"
+          placeholder="phone"
+          required="required"
+        />
+        </div>
+        <div>
+          <input
+          type="gender"
+          [(ngModel)]="myregister.gender"
+          name="gender"
+          placeholder="gender"
+          required="required"
+        />
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="close()">
+        OK
+      </button>
+    </div> -->
+  </ng-template>
