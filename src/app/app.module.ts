@@ -3,13 +3,8 @@ import {NgbModule, NgbTimepickerModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { MatFormFieldModule } from '@angular/material/form-field'; // Importa el módulo de Angular Material que necesitas
-// import { MatInputModule } from '@angular/material/input'; // Importa el módulo de Angular Material que necesitas
-
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http'
-
-import { MatIconModule } from '@angular/material/icon';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
@@ -28,6 +23,7 @@ import {
   PsychologistDetailDialog, PsychologistSavedAppointmentDialog,
   PsychologistsListComponent
 } from "./components/psychologists-list/psychologists-list.component";
+
 import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -35,9 +31,11 @@ import {CommonModule, JsonPipe, NgForOf} from "@angular/common";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {DateAdapter, MAT_DATE_FORMATS, MatNativeDateModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
+import { EditAppointmentComponent } from './components/edit-appointment/edit-appointment.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +49,9 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     PsychologistsListComponent,
     PsychologistDetailDialog,
     PsychologistAgendarDialog,
-    PsychologistSavedAppointmentDialog
+    PsychologistSavedAppointmentDialog,
+    ListAppointmentComponent,
+    EditAppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -61,8 +61,8 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MatFormFieldModule,
-    // MatInputModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
@@ -80,9 +80,13 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    NgxMatTimepickerModule
+    NgxMatTimepickerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

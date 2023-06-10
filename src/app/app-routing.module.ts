@@ -7,6 +7,7 @@ import { MainComponent } from './components/main/main.component'
 import { LogbookComponent } from './components/logbook/logbook.component';
 import { EditProfilePatientComponent } from './components/edit-profile-patient/edit-profile-patient.component';
 import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
+import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path:"main",
     component: MainComponent
+  },
+  {
+    path:"historial-citas",
+    component: ListAppointmentComponent
   },
   {
     path:"logbook",
