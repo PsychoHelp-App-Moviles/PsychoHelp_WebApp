@@ -23,7 +23,7 @@ const routes: Routes = [
     component: EditProfilePatientComponent
   },
   {
-    path:"appointment_list",
+    path:"historial-citas",
     component: ListAppointmentComponent
   },
   {
