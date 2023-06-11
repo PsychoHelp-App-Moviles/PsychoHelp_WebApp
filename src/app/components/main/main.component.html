@@ -1,86 +1,86 @@
+<div class="container">
+  <mat-drawer-container class="mat-container">
+    <mat-drawer  mode="side" opened class="navbar">
+      <div class="navbar-logo">
+        <img class="navbar-logo " src="https://images.hola.com/imagenes/estar-bien/20191122153958/razones-terapia-aceptado/0-745-569/terapia-psicologia-bien-visto-t.jpg?tx=w_680">
+
+      </div>
+      <hr/>
+      <div class="navbar-links">
+        <mat-icon  fontIcon="home"></mat-icon>
+        <a class="nav-link">Inicio</a>
+
+        <mat-icon fontIcon="person_pin"></mat-icon>
+        <a class="nav-link" [routerLink] ="getProfileRoute()" routerLinkActive="active">Ir a Perfil</a>
+
+        <mat-icon fontIcon="calendar_today"></mat-icon>
+        <a class="nav-link" routerLink="/historial-citas" routerLinkActive="active">Historial de Citas</a>
+        <mat-icon  fontIcon=" public"></mat-icon>
+        <a class="nav-link" routerLink="/psychologists-list" routerLinkActive="active">Agendar una cita</a>
+        <mat-icon  fontIcon="exit_to_app"></mat-icon>
+        <a class="nav-link" routerLink="/" routerLinkActive="active">Cerrar sesion</a>
+      </div>
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+      <div class="homebox-side">
+        <div class="homebox">
 
 
+          <div *ngFor="let element of publicationData" >
 
-<div class="navbar">
-<div class="navbar-logo">
-  <img class="navbar-logo " src="https://images.hola.com/imagenes/estar-bien/20191122153958/razones-terapia-aceptado/0-745-569/terapia-psicologia-bien-visto-t.jpg?tx=w_680">
+            <mat-card class="main-card" >
+              <mat-card-header>
 
-</div>
-<div class="navbar-links">
-  <mat-icon  fontIcon="home"></mat-icon>
-   <a class="nav-link">Inicio</a>
-   
-   <mat-icon fontIcon="person_pin"></mat-icon>
-   <a class="nav-link" [routerLink] ="getProfileRoute()" routerLinkActive="active">Ir a Perfil</a>
-  <mat-icon fontIcon=" local_hospital"></mat-icon>
-    <a class="nav-link" routerLink ="/logbook">pacientes</a>
+                <mat-card-title>{{element.title}}</mat-card-title>
+                <mat-card-subtitle></mat-card-subtitle>
+              </mat-card-header>
+              <div class="image-card-container">
+                <img mat-card-image src="{{element.photoUrl}}" class="image-card" alt="Foto relacionada a la publicación">
+              </div>
+              <mat-card-content>
+                <p>{{element.description}}</p>
+              </mat-card-content>
 
-  <mat-icon fontIcon="calendar_today"></mat-icon>
-    <a class="nav-link" routerLink="/historial-citas" routerLinkActive="active">Historial de Citas</a>
-    <mat-icon  fontIcon=" public"></mat-icon>
-    <a class="nav-link">Mis publicaciones</a>
-    <mat-icon  fontIcon="exit_to_app"></mat-icon>
-    <a class="nav-link">Cerrar sesion</a>
-  </div>
-</div>
+              <mat-card-actions>
+                <button mat-stroked-button [routerLink]="['/knowMore',element.id]">Mas información</button>
+              </mat-card-actions>
+            </mat-card>
 
+          </div>
 
-
-
-
-
-<div class="homebox-side">
-<div class="homebox">
-  
-
-  <div *ngFor="let element of publicationData" >
-  
-    <mat-card class="main-card" >
-        <mat-card-header>
-        
-          <mat-card-title>{{element.title}}</mat-card-title>
-          <mat-card-subtitle></mat-card-subtitle>
-        </mat-card-header>
-        <div class="image-card-container">
-        <img mat-card-image src="{{element.photoUrl}}" class="image-card" alt="Foto relacionada a la publicación">
         </div>
-        <mat-card-content>
-          <p>{{element.description}}</p>
-        </mat-card-content>
+      </div>
 
-        <mat-card-actions>
-          <button mat-stroked-button [routerLink]="['/knowMore',element.id]">Mas información</button>
-        </mat-card-actions>
-    </mat-card>
- 
-    </div>
-    
-</div>
-</div>
-
-
-<div class="citasData" >
-  <div class="citasHeader">
-    <h1>CITAS AGENDADAS</h1>
-  </div>
-
-
-
-    <div *ngFor="let appointment of appointmentsData">
-      <mat-card class="citas-card">
-        <mat-card-title>Tienes una cita agendada</mat-card-title>
-        <div class = "citas-card-content">
-          <mat-card-content class=""> 
-            <p>Fecha: {{appointment.scheduleDate}}</p>
-            <p>Historia personal: {{appointment.personalHistory}}</p>
-            </mat-card-content>
-
-          <mat-card-actions >
-            <button  mat-stroked-button [routerLink]="['/knowMore',appointment.id]">Mas información</button>
-          </mat-card-actions>
+      <div class="citasData" >
+        <div class="citasHeader">
+          <h1>CITAS AGENDADAS</h1>
         </div>
-      </mat-card>
 
-    </div>
-  
+
+
+        <div *ngFor="let appointment of appointmentsData">
+          <mat-card class="citas-card">
+            <mat-card-title>Tienes una cita agendada</mat-card-title>
+            <div class = "citas-card-content">
+              <mat-card-content class="">
+                <p>Fecha: {{appointment.scheduleDate}}</p>
+                <p>Historia personal: {{appointment.personalHistory}}</p>
+              </mat-card-content>
+
+              <mat-card-actions >
+                <button  mat-stroked-button [routerLink]="['/knowMore',appointment.id]">Mas información</button>
+              </mat-card-actions>
+            </div>
+          </mat-card>
+
+        </div>
+
+      </div>
+    </mat-drawer-content>
+
+
+  </mat-drawer-container>
+
 </div>

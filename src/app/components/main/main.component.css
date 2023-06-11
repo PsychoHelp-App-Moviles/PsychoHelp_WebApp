@@ -7,6 +7,14 @@
 .orange{
     background-color: blue;
 }
+.content {
+  padding-top: 13px;
+}
+
+.mat-drawer-content{
+  width: 70%;
+  padding: 16px;
+}
 .homebox-side{
 
     display: flex;
@@ -14,55 +22,50 @@
 }
 .homebox{
 
-    margin-left: 11rem;
+    margin-left: 10px;
     max-width: 100%;
 
     width: fit-content;
     background: rgba(128, 236, 248, 0.15);
     border-radius: 2.5rem;
     background-color: #22b5c6;
-    color: black; 
+    color: black;
     display: flex;
 
 }
 .citasHeader{
-
-  
-    max-width: 100%; 
+    max-width: 100%;
     min-width: 100%;
-    
     border-color: black;
-    box-shadow: 10;
     justify-content: center;
     border-radius: 0.5rem;
     background-color: rgb(209, 209, 209);
-    color: black; 
+    color: black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  
+
 }
 .citasData{
 
-    margin-left: 1rem;
-    max-width: 90%; 
+    margin-left: 10px;
+    max-width: 90%;
     min-width:40vh;
     margin-top:2rem;
-    margin-left: 20vh;
     width: fit-content;
     position: relative;
     border-radius: 0.5rem;
     background-color: #8fb4d1;
-    color: black; 
+    color: black;
     display: grid;
 }
 .citas-card-content{
 
     display: flex;
-    
+
 }
 
     .main-card{
-      
+
         margin: 10px;
         border-radius: 1.5rem;
         max-width: 50rem;
@@ -70,18 +73,18 @@
       }
 
     .citas-card{
-      
+
         margin: 10px;
         padding-left: 1rem;
         border-radius: 1.5rem;
         min-width: 70%;
-        
+
       }
 
       .detail-container {
         margin-top: 20px;
       }
-      
+
       .image-card-container {
         /* background-color: blue; */
     width: 100%;
@@ -96,7 +99,7 @@
       .image-card{
         width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 
@@ -104,21 +107,20 @@
 .navbar {
     background-color: rgb(74, 132, 241);
     color: #fff;
-    max-width:20vh;
+    width:15%;
     height: 100%; /* Establece la altura completa del viewport */
     position: fixed; /* Fija el navbar en la posición */
     top: 0; /* Coloca el navbar en la parte superior */
     left: 0; /* Coloca el navbar en el lado izquierdo */
     padding: 20px;
-   
-   
     justify-content: center;
-    align-items: top;
+    align-items: center;
   }
   .navbar-links{
+    alignt: right;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-   
+    grid-template-columns: repeat(2, 0fr);
+
 }
   .navbar-logo{
     border-radius: 50%;
