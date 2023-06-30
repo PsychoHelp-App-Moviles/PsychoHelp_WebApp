@@ -36,7 +36,8 @@ import {MatInputModule} from "@angular/material/input";
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
 import { EditAppointmentComponent } from './components/edit-appointment/edit-appointment.component';
-import { ChatComponent } from './chat/chat.component';
+import { ChatComponent } from './components/chat/chat.component';
+
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ChatComponent } from './chat/chat.component';
     PsychologistSavedAppointmentDialog,
     ListAppointmentComponent,
     EditAppointmentComponent,
-    ChatComponent
+    ChatComponent,
+
   ],
   imports: [
     BrowserModule,

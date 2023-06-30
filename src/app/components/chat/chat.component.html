@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        margin-top: 7%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #chatbot-container {
+        width: 50%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(180, 194, 199);
+    }
+
+    #chatbot-iframe {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+    <div id="chatbot-container">
+        <iframe id="chatbot-iframe" src="https://web.powerva.microsoft.com/environments/Default-0e0cb060-09ad-49f5-a005-68b9b49aa1f6/bots/cr314_botPsychohelp/webchat?__version__=2" frameborder="0"></iframe>
+    </div>
+</body>
+</html>

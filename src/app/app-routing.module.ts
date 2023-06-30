@@ -8,6 +8,7 @@ import { LogbookComponent } from './components/logbook/logbook.component';
 import { EditProfilePatientComponent } from './components/edit-profile-patient/edit-profile-patient.component';
 import {PsychologistsListComponent} from "./components/psychologists-list/psychologists-list.component";
 import { ListAppointmentComponent } from './components/list-appointment/list-appointment.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
     path:'psychologists-list',
     component: PsychologistsListComponent
   },
+  {
+    path:'chat',
+    component: ChatComponent
+  }
   // {
   //   path:'/home',
   //   component: AppComponent
